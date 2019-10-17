@@ -1,68 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sundae Takehome Project (79 minutes, 20 seconds)
 
-## Available Scripts
+See the component live at [sundae.aaronyih.com](https://sundae.aaronyih.com).
 
-In the project directory, you can run:
+## Challenges
+* **considering semi-responsive behavior** — using the section on the live site as reference, I wanted to make sure that the button would stay directly in between the two columns, even when resizing the window. This took a couple iterations to get the proper behavior. The solution was to use a container to give the whole section a margin and then make each column 50% width.
+* **strange flexbox child image aspect ratio issues** — for some reason, when setting a width on the image in the left column, the image would stretch to fit the width dimension and would not preserve the aspect ratio. Adding an explicit height as 'auto' did not work. The solution was to wrap the image in a containing div, set the image width to 100% and then change the width of the div.
+* **the time limit** - I have never timed myself building a component, so it was in interesting excercise to see what I could actually get done in 1.5 hours!
 
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## If I had more time, I would improve
+* **responsive behavior** – On the live website, when the screen gets too small, the right column collapses under the left column and the text becomes center-aligned. This could easily be achieved with media queries. I would also set a min and max width on the text in the right column.
+* **hover effect bug** – I was sort of just exprimenting here. I had this idea for an interaction that would focus your attention on a specific block of text. One problem seems to be that since there is a gap between the text and the numeral bullet (since the bullet is position absolute), there is some flickering behavior. I would probably have to rearrange the css so that the bullets aren't position absolute.
+* **bullet point font-family** – For some reason, even though the font-family is set to Lato, it seems like the numerals are different from the ones on your live site. It may be that Lato needs to be included independently, which you may have done on the live site but I didn't do on here, so it's defaulting to sans-serif instead.
